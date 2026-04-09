@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo"></div>
+            <h2>SmartMeet</h2>
+        </div>
+        
+        <div class="status-box">
+            <div id="status-indicator" class="indicator off"></div>
+            <span id="status-text">Ready to capture</span>
+        </div>
+        
+        <div class="actions">
+            <button id="start-btn" class="btn primary">Start Capture</button>
+            <button id="stop-btn" class="btn danger hidden">Stop & Analyze</button>
+        </div>
+        
+        <div class="footer">
+            <a href="http://localhost:8000/" target="_blank" id="dashboard-link">Open Dashboard</a>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
