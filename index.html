@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Insights Dashboard</title>
+    <!-- Use Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <div class="logo-icon"></div>
+                <h2>SmartMeet</h2>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    Dashboard
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="greeting">
+                    <h1>Welcome back, Team</h1>
+                    <p>Here are your recent meeting insights.</p>
+                </div>
+                <div class="actions">
+                    <button id="refresh-btn" class="btn primary">Refresh Data</button>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Meetings List -->
+                <section class="meetings-list-container glass-panel">
+                    <h3>Recent Meetings</h3>
+                    <div id="meetings-list" class="meetings-list">
+                        <!-- Meeting items injected via JS -->
+                        <div class="loading-state">Loading meetings...</div>
+                    </div>
+                </section>
+
+                <!-- Detailed View -->
+                <section class="meeting-details-container glass-panel">
+                    <div id="meeting-details" class="meeting-details hidden">
+                        <h2 id="detail-title">Meeting Title</h2>
+                        <span id="detail-date" class="date-badge"></span>
+                        
+                        <div class="detail-section">
+                            <h4>Executive Summary</h4>
+                            <p id="detail-summary" class="summary-text"></p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>Context & Decisions</h4>
+                            <p id="detail-decisions" class="decisions-text"></p>
+                        </div>
+                        
+                        <div class="detail-actions" style="margin-top: 20px;">
+                            <button id="copy-notes-btn" class="btn secondary">Copy Notes</button>
+                        </div>
+
+                    </div>
+                    <div id="empty-state" class="empty-state">
+                        <div class="empty-icon"></div>
+                        <p>Select a meeting to view insights.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
